@@ -39,6 +39,11 @@ export default function App({ Component, pageProps }) {
                   Test
                 </Link>
               </li>
+              <li class="nav-item">
+                <Link class="nav-link" href="/gallery">
+                  Gallery
+                </Link>
+              </li>
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
