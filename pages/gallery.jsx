@@ -16,21 +16,34 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 import photos from "../photos";
 
 function Gallery() {
-    const [index, setIndex] = useState(-1);
+  const [index, setIndex] = useState(-1);
 
-    return (
-        <>
-            <PhotoAlbum photos={photos} layout="rows" targetRowHeight={150} onClick={({ index }) => setIndex(index)} />
+  return (
+    <>
+      <div class="container-fluid text-center">
+        <div class="row">
+          <div class="col-4">FORM</div>
+
+          <div class="col-8">
+            <PhotoAlbum
+              photos={photos}
+              layout="rows"
+              targetRowHeight={150}
+              onClick={({ index }) => setIndex(index)}
+            />
 
             <Lightbox
-                slides={photos}
-                open={index >= 0}
-                index={index}
-                close={() => setIndex(-1)}
-                // enable optional lightbox plugins
-                plugins={[Fullscreen, Slideshow, Thumbnails, Zoom, Download]}
+              slides={photos}
+              open={index >= 0}
+              index={index}
+              close={() => setIndex(-1)}
+              // enable optional lightbox plugins
+              plugins={[Fullscreen, Slideshow, Zoom, Download]}
             />
-        </>
-    );
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
 export default Gallery;
