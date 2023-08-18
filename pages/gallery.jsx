@@ -106,9 +106,10 @@ function Gallery() {
           <div className="col-md-8">
             <PhotoAlbum
               photos={photos}
-              layout="rows"
+              layout="columns"
               targetRowHeight={150}
               onClick={({ index }) => setIndex(index)}
+              spacing={5}
             />
 
             <Lightbox
